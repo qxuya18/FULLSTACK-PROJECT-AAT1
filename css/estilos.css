@@ -1,0 +1,119 @@
+/* css/estilos.css · Estilos sencillos para la aplicación */
+* { 
+   box-sizing: border-box; 
+   }
+body { 
+  margin: 0; 
+  font-family: Arial, Helvetica, sans-serif; 
+  background: #f4f6f1; 
+  color: #222; 
+}
+
+.barra { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    flex-wrap: wrap;
+    gap: 10px; 
+    padding: 24px 24px; 
+    background: #03313A; 
+    color: #8fffe0; 
+  }
+
+.barra nav a { 
+  color: #fff; 
+  margin-left: 16px; 
+  text-decoration: none; 
+}
+
+.barra nav a:hover { 
+  text-decoration: underline; }
+
+.contenido { 
+  max-width: 1000px; 
+  margin: 24px auto; 
+  padding: 0 16px; 
+}
+
+.pie { 
+  text-align: center; 
+  color: #777; 
+  font-size: 13px; 
+  padding: 24px; 
+}
+
+h1 { 
+  font-size: 24px; 
+}
+
+table { 
+  width: 100%; 
+  border-collapse: collapse; 
+  background: #fff; 
+}
+
+th, td { 
+  padding: 8px 10px; 
+  border-bottom: 1px solid #ddd; 
+  text-align: left; 
+}
+
+th { 
+  background: #e9eef3; }
+
+.derecha { 
+  text-align: right; 
+}
+
+.boton { 
+  display: inline-block; 
+  padding: 6px 12px; 
+  border: 0; 
+  border-radius: 4px; 
+  background: #1e3a5f;
+  color: #fff; 
+  text-decoration: none; 
+  cursor: pointer; 
+  font-size: 14px; 
+}
+
+.boton.secundario { 
+  background: #6c7a89; 
+}
+
+.boton.peligro { 
+  background: #b03030; 
+}
+
+.acciones { 
+  display: flex; 
+  gap: 6px; 
+}
+.acciones form { margin: 0; }
+.formulario { background: #fff; padding: 20px; max-width: 520px; border-radius: 6px; }
+.formulario label { display: block; margin-top: 12px; font-weight: bold; }
+.formulario input, .formulario select { width: 100%; padding: 8px; margin-top: 4px; }
+.mensaje { padding: 10px 14px; border-radius: 4px; margin-bottom: 16px; }
+.mensaje.exito { background: #dff3e3; color: #1d6b2c; }
+.mensaje.error { background: #fbe1e1; color: #8a1f1f; }
+.errores { background: #fbe1e1; color: #8a1f1f; padding: 10px 24px; border-radius: 4px; }
+.tarjetas { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
+  gap: 12px; 
+}
+
+.tarjeta { 
+  background: #fff; 
+  padding: 16px; 
+  border-radius: 6px; 
+}
+
+.tarjeta strong { 
+  display: block; 
+  font-size: 26px; 
+}
+
+.estado-Bajo, .estado-Agotado { color: #b03030; font-weight: bold; }
+.buscador { display: flex; gap: 8px; margin-bottom: 12px; }
+.buscador input { flex: 1; padding: 6px; }*Hoja de Estilos. */

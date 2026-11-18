@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Papelería El Estudiante · Cliente de la API</title>
+  <!-- Reutilizamos los estilos de la AHD3 y agregamos unos pocos -->
+  <link rel="stylesheet" href="../css/estilos.css">
+  <link rel="stylesheet" href="../web/web.css">
+</head>
+<body>
+  <header class="barra">
+    <strong>📚 Papelería El Estudiante · Página que consume la API</strong>
+    <nav>
+      <a href="#resumen">Resumen</a>
+      <a href="#productos">Productos</a>
+      <a href="#ventas">Ventas</a>
+    </nav>
+  </header>
+
+  <main class="contenido">
+    <!-- Mensajes de éxito o error que devuelve la API -->
+    <div id="mensaje" class="mensaje" hidden></div>
+
+    <!-- 1. Resumen: GET /api/resumen -->
+    <section id="resumen">
+      <h1>Resumen</h1>
+      <div class="tarjetas">
+        <div class="tarjeta">Ventas registradas <strong id="totalVentas">…</strong></div>
+        <div class="tarjeta">Total vendido <strong id="totalVendido">…</strong></div>
+        <div class="tarjeta">Ticket promedio <strong id="ticketPromedio">…</strong></div>
+      </div>
+    </section>
+
+    <!-- 2. Productos: GET, POST, PUT y DELETE /api/productos -->
+    <section id="productos">
+      <h1>Productos</h1>
+      <form id="formBuscar" class="buscador">
+        <input id="buscar" placeholder="Buscar por nombre o código">
+        <button class="boton">Buscar</button>
+      </form>
+      <table>
+        <thead>
+          <tr><th>Código</th><th>Producto</th><th>Categoría</th><th class="derecha">Precio</th>
+              <th class="derecha">Stock</th><th>Estado</th><th>Acciones</th></tr>
+        </thead>
+        <tbody id="tablaProductos"></tbody>
+      </table>
+
+      <h2 id="tituloFormulario">Nuevo producto</h2>
+      <form id="formProducto" class="formulario">
+        <input type="hidden" id="idProducto">
+        <label for="codigo">Código</label>
+        <input id="codigo" maxlength="20" required>
+        <label for="nombre">Nombre</label>
+        <input id="nombre" maxlength="100" required>
+        <label for="precio">Precio (Q)</label>
+        <input id="precio" type="number" step="0.01" min="0.01" required>
+        <label for="stock">Stock</label>
+        <input id="stock" type="number" min="0" value="0" required>
+        <label for="idCategoria">Categoría</label>
+        <select id="idCategoria" required></select>
+        <p>
+          <button class="boton">Guardar</button>
+          <button type="button" id="cancelarEdicion" class="boton secundario">Cancelar</button>
+        </p>
+      </form>
+    </section>
+
+    <!-- 3. Ventas: POST /api/ventas, GET /api/ventas y GET /api/ventas/{id} -->
+    <section id="ventas">
+      <h1>Registrar venta</h1>
+      <form id="formVenta" class="formulario">
+        <label for="ventaCliente">Cliente</label>
+        <select id="ventaCliente" required></select>
+        <label for="ventaEmpleado">Atendido por</label>
+        <select id="ventaEmpleado" required></select>
+        <label for="ventaProducto">Producto</label>
+        <select id="ventaProducto" required></select>
+        <label for="ventaCantidad">Cantidad</label>
+        <input id="ventaCantidad" type="number" min="1" value="1" required>
+        <p><button class="boton">Registrar venta</button></p>
+      </form>
+
+      <div id="ticket"></div>
+
+      <h1>Ventas registradas</h1>
+      <table>
+        <thead>
+          <tr><th>#</th><th>Fecha</th><th>Cliente</th><th>Atendió</th><th class="derecha">Total</th><th></th></tr>
+        </thead>
+        <tbody id="tablaVentas"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer class="pie">AAT1 · Página web que consume la API REST · Ing. Guilmar Urizar, Instructor Intecap CQH</footer>
+  <script src="app.js"></script>
+</body>
+</html>

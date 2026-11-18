@@ -1,0 +1,37 @@
+
+# Variables de entorno
+.env
+.env.*
+!.env.example
+
+# Dependencias
+/vendor/
+/node_modules/
+
+# Logs
+*.log
+
+# Archivos temporales
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# Configuración local de editores
+.idea/
+.vscode/
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Claves y certificados privados
+*.pem
+*.key
+
+# Respaldos de bases de datos
+*.sql.gz
+*.dump
+*.sqlite
+*.sqlite3
+
